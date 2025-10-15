@@ -1,0 +1,1 @@
+.admin_container{margin-left:var(--sidebar-width);padding:20px;background-color:#f4f6f8;min-height:100vh}@media screen and (max-width: 768px){.admin_container{margin-left:0}}

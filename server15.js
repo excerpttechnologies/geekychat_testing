@@ -814,9 +814,9 @@ console.log("Received button body:", req.body);
     const components = [];
     let headerComponent = null;
 
-    // =====================
+    // 
     // 1. HEADER Component
-    // =====================
+    // 
     if (headerType !== "TEXT" && file) {
       // Step 1: Create upload session
       const sessionRes = await axios.post(
@@ -873,9 +873,9 @@ console.log("Received button body:", req.body);
       components.push(headerComponent);
     }
 
-    // =====================
+    // 
     // 2. BODY Component
-    // =====================
+    // 
     const bodyComponent = {
       type: "BODY",
       text: bodyText.trim(),
@@ -903,9 +903,9 @@ console.log("Received button body:", req.body);
 
     components.push(bodyComponent);
 
-    // =====================
+    // 
     // 3. FOOTER Component
-    // =====================
+    // 
     if (footerText && footerText.trim()) {
       components.push({
         type: "FOOTER",
@@ -913,9 +913,9 @@ console.log("Received button body:", req.body);
       });
     }
 
-    // =====================
+    // 
     // 4. BUTTONS Component
-    // =====================
+    // 
     let buttonCount = 0;
     if (buttons) {
       try {
@@ -969,9 +969,9 @@ console.log("Received button body:", req.body);
       }
     }
 
-    // =====================
+    // 
     // 5. Create Template
-    // =====================
+    // 
     const templateRes = await axios.post(
       `https://graph.facebook.com/${apiVersion}/${wabaId}/message_templates`,
       {
@@ -2417,9 +2417,9 @@ app.post('/api/campaigns/update-status', async (req, res) => {
 //     console.error('❌ Refund error:', error);
 //   }
 // }
-// ============================================
+// ==
 // FUNCTION 1: Update User Campaign History (for webhook updates)
-// ============================================
+// ==
 async function updateUserCampaignHistory(campaignId) {
     try {
         // Find ALL batches with the same campaignId
@@ -2489,9 +2489,9 @@ async function updateUserCampaignHistory(campaignId) {
 }
 
 
-// ============================================
+// ==
 // FUNCTION 3: Sync User History API (handles batches)
-// ============================================
+// ==
 app.post('/api/campaigns/sync-user-history', async (req, res) => {
   try {
     console.log('🔄 Starting user campaign history sync...');
@@ -3656,9 +3656,9 @@ app.post('/api/campaigns/verify-payment', async (req, res) => {
       });
     }
 
-    // ============================================
+    // ==
     // REFUND DEDUCTION LOGIC (FIFO - First In First Out)
-    // ============================================
+    // ==
     const refundApplied = campaignData.refundApplied || 0;
     
     if (refundApplied > 0) {
@@ -6368,9 +6368,9 @@ async function sendEmail(formData) {
   }
 }
 
-// ======================
+// =
 // 📲 Send WhatsApp
-// ======================
+// =
 // Using WhatsApp Cloud API (Meta/Facebook)
 
 function sanitizeForWhatsApp(text) {
@@ -6427,9 +6427,9 @@ components: [
 }
 
 
-// ======================
+// =
 // API Route
-// ======================
+// =
 app.post("/api/contact", async (req, res) => {
   const formData = req.body;
 
@@ -6756,7 +6756,7 @@ app.get('/api/dashboard', async (req, res) => {
 // const ContactTier = mongoose.model('ContactTier', ContactTierSchema);
 // const SharedFeatures = mongoose.model('SharedFeatures', SharedFeaturesSchema);
 
-// // ==================== PRICING PLANS ROUTES ====================
+// // ====== PRICING PLANS ROUTES ======
 
 // // GET all pricing plans
 // app.get('/api/pricing-plans', async (req, res) => {
@@ -6822,7 +6822,7 @@ app.get('/api/dashboard', async (req, res) => {
 //   }
 // });
 
-// // ==================== CONTACT TIERS ROUTES ====================
+// // ====== CONTACT TIERS ROUTES ======
 
 // // GET all contact tiers
 // app.get('/api/contact-tiers', async (req, res) => {
@@ -6902,7 +6902,7 @@ app.get('/api/dashboard', async (req, res) => {
 //   }
 // });
 
-// // ==================== SHARED FEATURES ROUTES ====================
+// // ====== SHARED FEATURES ROUTES ======
 
 // // GET shared features by type
 // app.get('/api/shared-features/:type', async (req, res) => {
@@ -6937,7 +6937,7 @@ app.get('/api/dashboard', async (req, res) => {
 //   }
 // });
 
-// // ==================== COMBINED PRICING DATA ROUTE ====================
+// // ====== COMBINED PRICING DATA ROUTE ======
 
 // // GET complete pricing data for frontend
 // app.get('/api/pricing-data', async (req, res) => {
